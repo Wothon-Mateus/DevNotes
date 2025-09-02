@@ -205,3 +205,25 @@ function exportData() {
 
   element.click();
 }
+
+// Eventos
+addNoteBtn.addEventListener("click", () => addNote());
+
+searchInput.addEventListener("keyup", (e) => {
+  const search = e.target.value;
+
+  searchNotes(search);
+});
+
+noteInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addNote();
+  }
+});
+
+exportBtn.addEventListener("click", () => {
+  exportData();
+});
+
+// Init
+showNotes();
